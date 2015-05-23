@@ -1,0 +1,33 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Machines</h1>
+  </div>
+</header>
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Machines:</h1>
+      <table class="table">
+        <tr ng-repeat="x in machines">
+          <td><img alt="" src="../assets/images/{{x.imagen}}.jpg"></td>
+          <td><em><p class="text-danger">{{ x.nombre }}</p></em><br>
+              <em>${{x.precio}}</em>
+              <em><p> Su descuento es de: {{x.descuento}} %</p></em>
+              <em>Disponible:{{x.disponible}}</em><br>
+              <em><strong><p class="text-primary">{{ x.descripcion }}</p></strong></em>
+          </td>
+          <td><button class="btn btn-danger btn-lg" ng-click="eliminar(x.idMaquina)">Eliminar</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <h5>Create by Santiago RG - Yeison CV</h5>
+  </div>
+</footer>
